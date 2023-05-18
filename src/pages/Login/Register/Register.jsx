@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../../providers/AuthProviders';
+
 import { GithubAuthProvider, GoogleAuthProvider, updateProfile } from 'firebase/auth';
+import { AuthContext } from '../../../providers/AuthProviders';
 
 const Register = () => {
 
