@@ -1,0 +1,8 @@
+.bg-image {
+    background-image: url('../../../public/yellow_and_blue_toy_train_for_makeup.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 650px;
+    width: 100vw;
+}
