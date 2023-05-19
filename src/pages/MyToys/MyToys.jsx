@@ -8,13 +8,13 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
 
-    const url = `http://localhost:5000/toys?email=${user?.email}`;
+    const url = `http://localhost:5000/toys?email=${user.email}`;
 
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
             .then(data => setMyToys(data));
-    }, [user, myToys]);
+    }, [url]);
 
     const handleDelete = _id => {
         console.log(_id);

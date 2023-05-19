@@ -46,6 +46,7 @@ const Login = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 // console.log(loggedInUser)
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 // console.log('error', error.message);
@@ -57,6 +58,7 @@ const Login = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 // console.log(loggedInUser)
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 // console.log('error', error.message);
@@ -84,7 +86,7 @@ const Login = () => {
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                 <label className="label">
-                                    <Link to='/registration' className="label-text-alt link link-hover">Don't have a account? Register now.</Link>
+                                    <Link to='/register' className="label-text-alt link link-hover">Don't have a account? Register now.</Link>
                                 </label>
                                 <p className='text-red-500'>{error}</p>
                             </div>
