@@ -14,7 +14,7 @@ const MyToys = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setMyToys(data));
-    }, [])
+    }, [user, myToys]);
 
     const handleDelete = _id => {
         console.log(_id);
@@ -43,6 +43,8 @@ const MyToys = () => {
                                 'Your Toy has been deleted.',
                                 'success'
                             )
+                            const remaining = myToys.filter(toy => toy._id !== _id);
+                            setMyToys(remaining);
                         }
                     })
             }
