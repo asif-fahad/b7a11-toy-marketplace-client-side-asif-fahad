@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MyToysRow = ({ myToy, handleDelete }) => {
 
@@ -41,7 +42,7 @@ const MyToysRow = ({ myToy, handleDelete }) => {
             </td>
             <th>
                 <div className='flex flex-col gap-2'>
-                    <button className="btn btn-outline btn-xs">Update</button>
+                    <Link to={`/updateToy/${_id}`}><button className="btn btn-outline btn-xs">Update</button></Link>
                     <button onClick={() => handleDelete(_id)} className="btn btn-danger btn-xs">Delete</button>
                 </div>
             </th>
