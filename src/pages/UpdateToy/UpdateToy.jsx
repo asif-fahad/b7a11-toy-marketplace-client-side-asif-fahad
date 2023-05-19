@@ -27,7 +27,7 @@ const UpdateToy = () => {
 
         const updatedToy = { name, sName, email, subCategory, price, rating, quantity, details, photo };
 
-        // console.log(updatedToy);
+        console.log(updatedToy);
 
         fetch(`http://localhost:5000/toys/${_id}`, {
             method: 'PATCH',
@@ -39,7 +39,7 @@ const UpdateToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
                         text: 'Toy Updated Successfully',
