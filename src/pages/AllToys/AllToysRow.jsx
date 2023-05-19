@@ -15,13 +15,10 @@ const AllToysRow = ({ toy }) => {
                 </div>
             </td>
             <td>
-                <div className="font-bold">{name}</div>
-            </td>
-            <td>
                 <div className="font-semibold">{sName}</div>
             </td>
             <td>
-                <div className="font-semibold">{email}</div>
+                <div className="font-bold">{name}</div>
             </td>
             <td>
                 <div className="font-semibold">{subCategory}</div>
@@ -30,13 +27,7 @@ const AllToysRow = ({ toy }) => {
                 <div className="font-semibold">{price}</div>
             </td>
             <td>
-                <div className="font-semibold">{rating}</div>
-            </td>
-            <td>
                 <div className="font-semibold">{quantity}</div>
-            </td>
-            <td>
-                <div className="font-semibold">{details}</div>
             </td>
             <th>
                 <Link to={`/details/${_id}`}><button className="btn btn-outline btn-xs">View Details</button></Link>

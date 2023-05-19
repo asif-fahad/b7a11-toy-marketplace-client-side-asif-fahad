@@ -6,7 +6,7 @@ const AllToys = () => {
 
     const toys = useLoaderData();
 
-    console.log(toys)
+    // console.log(toys)
 
     return (
         <div className="overflow-x-auto w-full">
@@ -15,14 +15,11 @@ const AllToys = () => {
                 <thead>
                     <tr>
                         <th>Photo</th>
-                        <th>Name</th>
                         <th>Seller Name</th>
-                        <th>Seller Email</th>
+                        <th>Name</th>
                         <th>Sub Category</th>
                         <th>Price</th>
-                        <th>Rating</th>
                         <th>Available Quantity</th>
-                        <th>Details Description</th>
                         <th></th>
                     </tr>
                 </thead>
