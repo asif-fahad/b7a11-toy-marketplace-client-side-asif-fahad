@@ -23,9 +23,9 @@ const CategoryTabs = () => {
                 <Tab>Fire Truck</Tab>
             </TabList>
             <TabPanel >
-                <div className='grid md:grid-cols-2 gap-2'>
+                <div className='grid md:grid-cols-2 gap-2 md:w-10/12 mx-auto'>
                     {
-                        toys.filter(t => t.subCategory == "Sports Car").map(t => <div>
+                        toys.filter(t => t.subCategory == "Sports Car").map(t => <div key={t._id}>
                             <div className="card w-96 h-96 bg-base-100 shadow-xl">
                                 <figure><img src={t.photo} alt="Cars" /></figure>
                                 <div className="card-body">
@@ -43,10 +43,10 @@ const CategoryTabs = () => {
                 </div>
             </TabPanel>
             <TabPanel>
-                <div className='grid md:grid-cols-2 gap-2'>
+                <div className='grid md:grid-cols-2 gap-2 md:w-10/12 mx-auto'>
                     {
                         toys.filter(t => t.subCategory == "Truck").map(t =>
-                            <div>
+                            <div key={t._id}>
                                 <div className="card w-96 h-96 bg-base-100 shadow-xl">
                                     <figure><img src={t.photo} alt="Cars" /></figure>
                                     <div className="card-body">
@@ -64,10 +64,10 @@ const CategoryTabs = () => {
                 </div>
             </TabPanel>
             <TabPanel>
-                <div className='grid md:grid-cols-2 gap-2'>
+                <div className='grid md:grid-cols-2 gap-2 md:w-10/12 mx-auto'>
                     {
                         toys.filter(t => t.subCategory == "Fire Truck").map(t =>
-                            <div>
+                            <div key={t._id}>
                                 <div className="card w-96 h-96 bg-base-100 shadow-xl">
                                     <figure><img src={t.photo} alt="Cars" /></figure>
                                     <div className="card-body">

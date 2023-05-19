@@ -12,7 +12,7 @@ const Gallery = () => {
                 <h1 className='text-5xl font-black'>Recent Photoshots</h1>
                 <p className='text-2xl font-bold'>Gallery</p>
             </div>
-            <div className='card w-full bg-base-100 shadow-2xl grid grid-cols-1 lg:grid-cols-4 gap-2'>
+            <div className='card w-full bg-base-100 shadow-2xl grid grid-cols-1 lg:grid-cols-4 gap-2 md:w-10/12 mx-auto'>
                 <div className="">
                     <figure><img src={one} alt="Shoes" /></figure>
                 </div>

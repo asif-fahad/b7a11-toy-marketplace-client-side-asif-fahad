@@ -72,7 +72,7 @@ const MyToys = () => {
                 <tbody>
                     {/* row 1 */}
                     {
-                        myToys.map(myToy => <MyToysRow
+                        myToys.filter(f => f.email == user.email).map(myToy => <MyToysRow
                             key={myToy._id}
                             myToy={myToy}
                             handleDelete={handleDelete}
