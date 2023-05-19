@@ -5,11 +5,32 @@ const AddAToy = () => {
 
     const { user } = useContext(AuthContext);
 
+    const handleAddToy = event => {
+        event.preventDefault();
+
+        const form = event.target;
+
+        const name = form.name.value;
+        const sName = form.sName.value;
+        const email = form.email.value;
+        const subCategory = form.subCategory.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const quantity = form.quantity.value;
+        const details = form.details.value;
+        const photo = form.photo.value;
+
+        const newToy = { name, sName, email, subCategory, price, rating, quantity, details, photo };
+
+        console.log(newToy);
+
+    }
+
 
     return (
-        <div className="bg-[#F4F3F0] p-24">
+        <div className="bg-gray-300 p-24">
             <h2 className="text-3xl font-extrabold text-center">Add a Toy</h2>
-            <form>
+            <form onSubmit={handleAddToy}>
                 {/* form toy name and seller name*/}
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">
@@ -25,7 +46,7 @@ const AddAToy = () => {
                             <span className="label-text">Seller Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="sname" placeholder="Seller Name" defaultValue={user?.displayName} className="input input-bordered w-full" required />
+                            <input type="text" name="sName" placeholder="Seller Name" defaultValue={user?.displayName} className="input input-bordered w-full" required />
                         </label>
                     </div>
                 </div>
@@ -74,7 +95,7 @@ const AddAToy = () => {
                             <span className="label-text">Available Quantity</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="quantity" placeholder="quantity" className="input input-bordered w-full" />
+                            <input type="text" name="quantity" placeholder="Quantity" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
