@@ -1,9 +1,9 @@
 import React from 'react';
 
-const MyToysRow = ({ myToy }) => {
+const MyToysRow = ({ myToy, handleDelete }) => {
 
-    const { name, sName, email, subCategory, price, rating, quantity, details, photo } = myToy;
-    console.log(myToy);
+    const { _id, name, sName, email, subCategory, price, rating, quantity, details, photo } = myToy;
+    // console.log(myToy);
 
     return (
 
@@ -42,7 +42,7 @@ const MyToysRow = ({ myToy }) => {
             <th>
                 <div className='flex flex-col gap-2'>
                     <button className="btn btn-outline btn-xs">Update</button>
-                    <button className="btn btn-danger btn-xs">Delete</button>
+                    <button onClick={() => handleDelete(_id)} className="btn btn-danger btn-xs">Delete</button>
                 </div>
             </th>
         </tr>
