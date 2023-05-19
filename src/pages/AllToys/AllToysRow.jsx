@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MyToysRow = ({ myToy, handleDelete }) => {
+const AllToysRow = ({ toy }) => {
 
-    const { _id, name, sName, email, subCategory, price, rating, quantity, details, photo } = myToy;
-    // console.log(myToy);
+    const { _id, name, sName, email, subCategory, price, rating, quantity, details, photo } = toy;
 
     return (
         <tr>
@@ -40,14 +39,10 @@ const MyToysRow = ({ myToy, handleDelete }) => {
                 <div className="font-semibold">{details}</div>
             </td>
             <th>
-                <div className='flex flex-col gap-2'>
-                    <Link to={`/updateToy/${_id}`}><button className="btn btn-outline btn-xs">Update</button></Link>
-                    <button onClick={() => handleDelete(_id)} className="btn btn-danger btn-xs">Delete</button>
-                </div>
+                <Link to={`/details/${_id}`}><button className="btn btn-outline btn-xs">View Details</button></Link>
             </th>
         </tr>
-
     );
 };
 
-export default MyToysRow;
+export default AllToysRow;
