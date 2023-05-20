@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProviders';
+import Swal from 'sweetalert2';
 
 const CategoryTabs = () => {
+
+    const { user } = useContext(AuthContext);
 
     const [toys, setToys] = useState([]);
 
@@ -14,6 +18,16 @@ const CategoryTabs = () => {
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
+
+    const handleAlert = () => {
+        if (!user) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'You have to log in first to view details',
+            })
+        }
+    }
 
     return (
         <Tabs>
@@ -35,7 +49,7 @@ const CategoryTabs = () => {
                                         <Rating style={{ maxWidth: 150 }} value={t.rating} readOnly></Rating>
                                         <p>{t.rating}</p>
                                     </div>
-                                    <Link to={`/details/${t._id}`}><button className="btn btn-outline btn-xs">View Details</button></Link>
+                                    <Link to={`/details/${t._id}`}><button onClick={handleAlert} className="btn btn-outline btn-xs">View Details</button></Link>
                                 </div>
                             </div>
                         </div>)
@@ -56,7 +70,7 @@ const CategoryTabs = () => {
                                             <Rating style={{ maxWidth: 150 }} value={t.rating} readOnly></Rating>
                                             <p>{t.rating}</p>
                                         </div>
-                                        <Link to={`/details/${t._id}`}><button className="btn btn-outline btn-xs">View Details</button></Link>
+                                        <Link to={`/details/${t._id}`}><button onClick={handleAlert} className="btn btn-outline btn-xs">View Details</button></Link>
                                     </div>
                                 </div>
                             </div>)
@@ -77,7 +91,7 @@ const CategoryTabs = () => {
                                             <Rating style={{ maxWidth: 150 }} value={t.rating} readOnly></Rating>
                                             <p>{t.rating}</p>
                                         </div>
-                                        <Link to={`/details/${t._id}`}><button className="btn btn-outline btn-xs">View Details</button></Link>
+                                        <Link to={`/details/${t._id}`}><button onClick={handleAlert} className="btn btn-outline btn-xs">View Details</button></Link>
                                     </div>
                                 </div>
                             </div>)
