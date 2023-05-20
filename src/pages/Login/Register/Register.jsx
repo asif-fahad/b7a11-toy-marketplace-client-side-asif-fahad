@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 
 import { GithubAuthProvider, GoogleAuthProvider, updateProfile } from 'firebase/auth';
 import { AuthContext } from '../../../providers/AuthProviders';
+import useTitle from '../../../hooks/useTitle';
 
 const Register = () => {
+
+    useTitle('Register');
 
     const { user, createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
 

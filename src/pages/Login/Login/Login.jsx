@@ -3,12 +3,15 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css'
 import { AuthContext } from '../../../providers/AuthProviders';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import useTitle from '../../../hooks/useTitle';
 
 const Login = () => {
 
     const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
 
     const [error, setError] = useState('');
+
+    useTitle('Login')
 
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider()

@@ -4,9 +4,13 @@ import Gallery from '../Gallery/Gallery';
 import CategoryTabs from '../CategoryTabs/CategoryTabs';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import useTitle from '../../hooks/useTitle';
 
 
 const Home = () => {
+
+    useTitle('Home');
+
     useEffect(() => {
         AOS.init({
             duration: 1000, // Animation duration in milliseconds
