@@ -11,15 +11,19 @@ const AllToys = () => {
 
     // console.log(data);
     const [searchText, setSearchText] = useState("");
-    const [toys, setToys] = useState([data])
-
-
+    const [toys, setToys] = useState(data)
 
 
     const handleSearch = () => {
-        fetch(`https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toysSearch/${searchText}`)
-            .then(res => res.json())
-            .then(data => setToys(data))
+        if (searchText) {
+            fetch(`https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/getToysByText/${searchText}`)
+                .then(res => res.json())
+                .then(data => setToys(data))
+        }
+        else {
+            setToys(data)
+        }
+
     }
 
 
@@ -48,7 +52,7 @@ const AllToys = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            data.map(toy => <AllToysRow
+                            toys.map(toy => <AllToysRow
                                 key={toy._id}
                                 toy={toy}
 

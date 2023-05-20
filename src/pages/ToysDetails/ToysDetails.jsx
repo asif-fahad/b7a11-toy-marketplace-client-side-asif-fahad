@@ -20,7 +20,7 @@ const ToysDetails = () => {
                     <p><span className="font-bold">Seller Name:</span> {sName}</p>
                     <p><span className="font-bold">Seller Email:</span> {email}</p>
                     <p><span className="font-bold">Sub-Category:</span> {subCategory}</p>
-                    <p><span className="font-bold">Price:</span> {price}</p>
+                    <p><span className="font-bold">Price:</span> {price}$</p>
                     <p><span className="font-bold">Available Quantity:</span> {quantity}</p>
                     <p><span className="font-bold">Detail Description:</span> {details}</p>
                     <div className='flex gap-2 items-center'>

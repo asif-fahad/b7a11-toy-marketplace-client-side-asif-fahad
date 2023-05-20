@@ -44,7 +44,7 @@ const CategoryTabs = () => {
                                 <figure><img src={t.photo} alt="Cars" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{t.name}</h2>
-                                    <p><span className="font-bold">Price:</span> {t.price}</p>
+                                    <p><span className="font-bold">Price:</span> {t.price}$</p>
                                     <div className='flex gap-2 items-center'>
                                         <Rating style={{ maxWidth: 150 }} value={t.rating} readOnly></Rating>
                                         <p>{t.rating}</p>
@@ -65,7 +65,7 @@ const CategoryTabs = () => {
                                     <figure><img src={t.photo} alt="Cars" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{t.name}</h2>
-                                        <p><span className="font-bold">Price:</span> {t.price}</p>
+                                        <p><span className="font-bold">Price:</span> {t.price}$</p>
                                         <div className='flex gap-2 items-center'>
                                             <Rating style={{ maxWidth: 150 }} value={t.rating} readOnly></Rating>
                                             <p>{t.rating}</p>
@@ -86,7 +86,7 @@ const CategoryTabs = () => {
                                     <figure><img src={t.photo} alt="Cars" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{t.name}</h2>
-                                        <p><span className="font-bold">Price:</span> {t.price}</p>
+                                        <p><span className="font-bold">Price:</span> {t.price}$</p>
                                         <div className='flex gap-2 items-center'>
                                             <Rating style={{ maxWidth: 150 }} value={t.rating} readOnly></Rating>
                                             <p>{t.rating}</p>
