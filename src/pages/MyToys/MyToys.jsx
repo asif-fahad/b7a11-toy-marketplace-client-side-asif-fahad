@@ -13,13 +13,13 @@ const MyToys = () => {
     const [sorted, setSorted] = useState('ascending')
 
 
-    const url = `https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toys?email=${user?.email}&sort=${sorted}`;
+    const url = `https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toysEmailSort?email=${user?.email}&sort=${sorted}`;
 
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
             .then(data => setMyToys(data));
-    }, [user]);
+    }, [user, sorted]);
 
     const handleDelete = _id => {
         console.log(_id);
@@ -68,7 +68,8 @@ const MyToys = () => {
                             <th>Seller Name</th>
                             <th>Seller Email</th>
                             <th>Sub Category</th>
-                            <th>Price <button onClick={() => setSorted('descending')}>↑</button></th>
+                            <th className='flex items-center gap-2'>Price <div className='flex flex-col'><button className='text-lg' onClick={() => setSorted('ascending')}>↑</button><button className='text-lg' onClick={() => setSorted('descending')}>↓</button>
+                            </div></th>
                             <th>Rating</th>
                             <th>Available Quantity</th>
                             <th>Details Description</th>
@@ -78,7 +79,7 @@ const MyToys = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            myToys.filter(f => f.email == user.email).map(myToy => <MyToysRow
+                            myToys.map(myToy => <MyToysRow
                                 key={myToy._id}
                                 myToy={myToy}
                                 handleDelete={handleDelete}
