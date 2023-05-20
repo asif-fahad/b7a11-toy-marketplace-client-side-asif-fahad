@@ -24,7 +24,7 @@ const AllToysRow = ({ toy }) => {
                 <div className="font-semibold">{subCategory}</div>
             </td>
             <td>
-                <div className="font-semibold">{price}</div>
+                <div className="font-semibold">{price}$</div>
             </td>
             <td>
                 <div className="font-semibold">{quantity}</div>

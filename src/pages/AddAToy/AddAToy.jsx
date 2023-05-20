@@ -18,9 +18,9 @@ const AddAToy = () => {
         const sName = form.sName.value;
         const email = form.email.value;
         const subCategory = form.subCategory.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const quantity = form.quantity.value;
+        const price = parseInt(form.price.value);
+        const rating = parseInt(form.rating.value);
+        const quantity = parseInt(form.quantity.value);
         const details = form.details.value;
         const photo = form.photo.value;
 
@@ -97,10 +97,10 @@ const AddAToy = () => {
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
-                            <span className="label-text">Price</span>
+                            <span className="label-text">Price $</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="price" placeholder="Price" className="input input-bordered w-full" />
+                            <input type="number" name="price" placeholder="Price" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -108,7 +108,7 @@ const AddAToy = () => {
                             <span className="label-text">Rating</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
+                            <input type="number" name="rating" placeholder="Rating" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -119,7 +119,7 @@ const AddAToy = () => {
                             <span className="label-text">Available Quantity</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="quantity" placeholder="Quantity" className="input input-bordered w-full" />
+                            <input type="number" name="quantity" placeholder="Quantity" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">

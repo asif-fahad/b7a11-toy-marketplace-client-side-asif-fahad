@@ -10,9 +10,10 @@ const MyToys = () => {
 
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
+    const [sorted, setSorted] = useState('ascending')
 
 
-    const url = `https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toys?email=${user?.email}`;
+    const url = `https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toys?email=${user?.email}&sort=${sorted}`;
 
     useEffect(() => {
         fetch(url)
@@ -67,7 +68,7 @@ const MyToys = () => {
                             <th>Seller Name</th>
                             <th>Seller Email</th>
                             <th>Sub Category</th>
-                            <th>Price</th>
+                            <th>Price <button onClick={() => setSorted('descending')}>↑</button></th>
                             <th>Rating</th>
                             <th>Available Quantity</th>
                             <th>Details Description</th>

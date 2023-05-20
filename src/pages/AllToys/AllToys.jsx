@@ -9,7 +9,7 @@ const AllToys = () => {
 
     const data = useLoaderData();
 
-    // console.log(toys);
+    // console.log(data);
     const [searchText, setSearchText] = useState("");
     const [toys, setToys] = useState([data])
 
