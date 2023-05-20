@@ -8,6 +8,8 @@ const AllToys = () => {
     useTitle('All Toys')
 
     const data = useLoaderData();
+
+    // console.log(toys);
     const [searchText, setSearchText] = useState("");
     const [toys, setToys] = useState([data])
 
