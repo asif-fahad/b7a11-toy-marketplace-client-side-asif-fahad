@@ -8,7 +8,7 @@ const Gallery = () => {
 
     return (
         <div>
-            <div className='text-center my-5'>
+            <div className='text-center my-7'>
                 <h1 className='text-5xl font-black'>Recent Photoshots</h1>
                 <p className='text-2xl font-bold'>Gallery</p>
             </div>

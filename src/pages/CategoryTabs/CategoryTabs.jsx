@@ -26,7 +26,7 @@ const CategoryTabs = () => {
                 <div className='grid md:grid-cols-2 gap-2 md:w-10/12 mx-auto'>
                     {
                         toys.filter(t => t.subCategory == "Sports Car").map(t => <div key={t._id}>
-                            <div className="card w-96 h-96 bg-base-100 shadow-xl">
+                            <div className="card w-full lg:w-96 h-96 bg-base-100 shadow-xl">
                                 <figure><img src={t.photo} alt="Cars" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{t.name}</h2>

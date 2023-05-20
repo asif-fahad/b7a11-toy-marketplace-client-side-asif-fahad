@@ -9,13 +9,13 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Gallery></Gallery>
-            <div className='my-5'>
+            <div className='my-7'>
                 <h1 className='text-5xl font-black mb-3 text-center'>Shop By Category</h1>
                 <CategoryTabs></CategoryTabs>
             </div>
 
             {/* extra section one */}
-            <section className='my-5'>
+            <section className='my-7'>
                 <div>
                     <h1 className='text-5xl font-black mb-3 text-center'>Customer Saying</h1>
                 </div>
