@@ -12,7 +12,7 @@ const MyToys = () => {
     const [myToys, setMyToys] = useState([]);
 
 
-    const url = `http://localhost:5000/toys?email=${user?.email}`;
+    const url = `https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toys?email=${user?.email}`;
 
     useEffect(() => {
         fetch(url)
@@ -35,7 +35,7 @@ const MyToys = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/toys/${_id}`, {
+                fetch(`https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toys/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

@@ -38,12 +38,12 @@ const router = createBrowserRouter([
             {
                 path: 'allToys',
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://localhost:5000/toys')
+                loader: () => fetch('https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toys')
             },
             {
                 path: 'details/:id',
                 element: <PrivateRoute><ToysDetails></ToysDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toys/${params.id}`)
             },
             {
                 path: 'myToys',
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
             {
                 path: 'updateToy/:id',
                 element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toys/${params.id}`)
             },
 
         ]
