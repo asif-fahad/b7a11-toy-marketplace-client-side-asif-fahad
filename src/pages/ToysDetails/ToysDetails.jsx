@@ -10,7 +10,7 @@ const ToysDetails = () => {
 
     return (
         <div className='lg:w-3/12 mx-auto my-5'>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-full lg:w-96 bg-base-100 shadow-xl">
                 <figure><img src={photo} alt="Cars" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
