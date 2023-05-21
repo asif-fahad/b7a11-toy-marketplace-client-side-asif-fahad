@@ -10,10 +10,10 @@ const MyToys = () => {
 
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
-    const [sorted, setSorted] = useState('ascending')
+    const [sorted, setSorted] = useState(true)
 
 
-    const url = `https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toysEmailSort?email=${user?.email}&sort=${sorted}`;
+    const url = `https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toysEmailSort?email=${user?.email}&sort=${sorted ? 'ascending' : 'descending'}`;
 
     useEffect(() => {
         fetch(url)
@@ -68,8 +68,7 @@ const MyToys = () => {
                             <th>Seller Name</th>
                             <th>Seller Email</th>
                             <th>Sub Category</th>
-                            <th className='flex items-center gap-2'>Price <div className='flex flex-col'><button className='text-lg' onClick={() => setSorted('ascending')}>↑</button><button className='text-lg' onClick={() => setSorted('descending')}>↓</button>
-                            </div></th>
+                            <th className='flex items-center gap-2'>Price <button className='text-lg' onClick={() => setSorted(!sorted)}>{sorted ? '↓' : '↑'}</button></th>
                             <th>Rating</th>
                             <th>Available Quantity</th>
                             <th>Details Description</th>
