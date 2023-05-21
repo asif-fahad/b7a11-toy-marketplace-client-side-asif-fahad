@@ -88,7 +88,7 @@ const UpdateToy = () => {
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
-                        <select className="select w-full max-w-xs" name='subCategory' defaultValue={subCategory}>
+                        <select className="select w-full max-w-xs" name='subCategory' defaultValue={subCategory} required>
                             <option disabled selected>Pick your favorite Toy Car</option>
                             <option>Sports Car</option>
                             <option>Truck</option>
@@ -103,7 +103,7 @@ const UpdateToy = () => {
                             <span className="label-text">Price $</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" name="price" placeholder="Price" defaultValue={price} className="input input-bordered w-full" />
+                            <input type="number" name="price" placeholder="Price" min={1} defaultValue={price} className="input input-bordered w-full" required />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -111,7 +111,7 @@ const UpdateToy = () => {
                             <span className="label-text">Rating</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" name="rating" placeholder="Rating" defaultValue={rating} className="input input-bordered w-full" />
+                            <input type="number" name="rating" placeholder="Rating" min={0} max={5} defaultValue={rating} className="input input-bordered w-full" required />
                         </label>
                     </div>
                 </div>
@@ -122,7 +122,7 @@ const UpdateToy = () => {
                             <span className="label-text">Available Quantity</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" name="quantity" placeholder="Quantity" defaultValue={quantity} className="input input-bordered w-full" />
+                            <input type="number" name="quantity" placeholder="Quantity" defaultValue={quantity} className="input input-bordered w-full" required />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -130,7 +130,7 @@ const UpdateToy = () => {
                             <span className="label-text">Details Description</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="details" placeholder="Details" defaultValue={details} className="input input-bordered w-full" />
+                            <input type="text" name="details" placeholder="Details" defaultValue={details} className="input input-bordered w-full" required />
                         </label>
                     </div>
                 </div>
@@ -141,7 +141,7 @@ const UpdateToy = () => {
                             <span className="label-text">Photo URL</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="photo" placeholder="Photo URL" defaultValue={photo} className="input input-bordered w-full" />
+                            <input type="text" name="photo" placeholder="Photo URL" defaultValue={photo} className="input input-bordered w-full" required />
                         </label>
                     </div>
                 </div>

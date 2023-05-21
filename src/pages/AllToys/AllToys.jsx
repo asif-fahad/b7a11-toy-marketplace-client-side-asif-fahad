@@ -52,7 +52,7 @@ const AllToys = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            toys.map(toy => <AllToysRow
+                            toys && toys.map(toy => <AllToysRow
                                 key={toy._id}
                                 toy={toy}
 
