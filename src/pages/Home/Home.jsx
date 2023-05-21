@@ -16,7 +16,7 @@ const Home = () => {
             duration: 1000, // Animation duration in milliseconds
             offset: 200, // Offset (in pixels) from the element's position when animation starts
             easing: 'ease-in-out', // Easing function for the animation
-            once: true, // Whether to only animate elements once or on every scroll
+            once: false, // Whether to only animate elements once or on every scroll
         });
     }, []);
 
