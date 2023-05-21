@@ -100,7 +100,7 @@ const AddAToy = () => {
                             <span className="label-text">Price $</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" name="price" placeholder="Price" min={0} className="input input-bordered w-full" required />
+                            <input type="number" name="price" placeholder="Price" min={1} className="input input-bordered w-full" required />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -108,7 +108,7 @@ const AddAToy = () => {
                             <span className="label-text">Rating</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" name="rating" placeholder="Rating" min={0} max={5} className="input input-bordered w-full" required />
+                            <input type="number" name="rating" placeholder="Rating" min={1} max={5} className="input input-bordered w-full" required />
                         </label>
                     </div>
                 </div>
@@ -119,7 +119,7 @@ const AddAToy = () => {
                             <span className="label-text">Available Quantity</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" name="quantity" placeholder="Quantity" className="input input-bordered w-full" required />
+                            <input type="number" name="quantity" placeholder="Quantity" min={0} className="input input-bordered w-full" required />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">

@@ -111,7 +111,7 @@ const UpdateToy = () => {
                             <span className="label-text">Rating</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" name="rating" placeholder="Rating" min={0} max={5} defaultValue={rating} className="input input-bordered w-full" required />
+                            <input type="number" name="rating" placeholder="Rating" min={1} max={5} defaultValue={rating} className="input input-bordered w-full" required />
                         </label>
                     </div>
                 </div>
@@ -122,7 +122,7 @@ const UpdateToy = () => {
                             <span className="label-text">Available Quantity</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" name="quantity" placeholder="Quantity" defaultValue={quantity} className="input input-bordered w-full" required />
+                            <input type="number" name="quantity" placeholder="Quantity" min={0} defaultValue={quantity} className="input input-bordered w-full" required />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
