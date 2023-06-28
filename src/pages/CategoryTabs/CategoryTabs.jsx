@@ -54,11 +54,12 @@ const CategoryTabs = () => {
                 <Tab onClick={() => setCategory("Fire Truck")}
                     className="tab rounded-md text-xl sm:mx-auto">Fire Truck</Tab>
             </TabList>
+            {/* first tab */}
             <TabPanel >
                 <div className='grid md:grid-cols-2 gap-2 md:w-10/12 mx-auto'>
                     {
                         category == "Sports Car" && data.map(t => <div key={t._id}>
-                            <div className="card w-full lg:w-96 h-96 bg-base-100 shadow-xl">
+                            <div className="card w-9/12 mx-auto lg:w-96 h-96 bg-base-100 shadow-xl">
                                 <figure><img src={t.photo} alt="Cars" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{t.name}</h2>
@@ -74,12 +75,13 @@ const CategoryTabs = () => {
                     }
                 </div>
             </TabPanel>
+            {/* second tab */}
             <TabPanel>
                 <div className='grid md:grid-cols-2 gap-2 md:w-10/12 mx-auto'>
                     {
                         category == "Truck" && data.map(t =>
                             <div key={t._id}>
-                                <div className="card w-96 h-96 bg-base-100 shadow-xl">
+                                <div className="card w-9/12 mx-auto lg:w-96 h-96 bg-base-100 shadow-xl">
                                     <figure><img src={t.photo} alt="Cars" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{t.name}</h2>
@@ -95,12 +97,13 @@ const CategoryTabs = () => {
                     }
                 </div>
             </TabPanel>
+            {/* third tab */}
             <TabPanel>
                 <div className='grid md:grid-cols-2 gap-2 md:w-10/12 mx-auto'>
                     {
                         category == "Fire Truck" && data.map(t =>
                             <div key={t._id}>
-                                <div className="card w-96 h-96 bg-base-100 shadow-xl">
+                                <div className="card w-9/12 mx-auto lg:w-96 h-96 bg-base-100 shadow-xl">
                                     <figure><img src={t.photo} alt="Cars" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{t.name}</h2>
