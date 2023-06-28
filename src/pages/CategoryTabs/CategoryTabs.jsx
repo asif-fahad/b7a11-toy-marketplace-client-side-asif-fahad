@@ -11,13 +11,27 @@ const CategoryTabs = () => {
 
     const { user } = useContext(AuthContext);
 
-    const [toys, setToys] = useState([]);
+    // const [toys, setToys] = useState([]);
+
+    const [category, setCategory] = useState("Sports Car");
+    const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/toys')
-            .then(res => res.json())
-            .then(data => setToys(data))
-    }, [])
+        fetch(
+            `https://b7a11-toy-marketplace-server-side-asif-fahad.vercel.app/filter/${category}`,
+            {
+                method: "GET",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify(),
+            }
+        )
+            .then((res) => res.json())
+            .then((data) => {
+                setData(data);
+            });
+    }, [category]);
 
     const handleAlert = () => {
         if (!user) {
@@ -30,16 +44,20 @@ const CategoryTabs = () => {
     }
 
     return (
-        <Tabs>
-            <TabList>
-                <Tab>Sports Car</Tab>
-                <Tab>Truck</Tab>
-                <Tab>Fire Truck</Tab>
+        <Tabs className="text-center flex flex-col justify-center">
+            <TabList className="tabs md:flex md:justify-around tabs-boxed mx-auto bg-blue-500 shadow-xl  w-1/2 font-bold text-center p-7 my-2">
+                <Tab onClick={() => setCategory("Sports Car")}
+                    className="tab rounded-md text-xl sm:mx-auto"
+                >Sports Car</Tab>
+                <Tab onClick={() => setCategory("Truck")}
+                    className="tab rounded-md text-xl sm:mx-auto">Truck</Tab>
+                <Tab onClick={() => setCategory("Fire Truck")}
+                    className="tab rounded-md text-xl sm:mx-auto">Fire Truck</Tab>
             </TabList>
             <TabPanel >
                 <div className='grid md:grid-cols-2 gap-2 md:w-10/12 mx-auto'>
                     {
-                        toys.filter(t => t.subCategory == "Sports Car").map(t => <div key={t._id}>
+                        category == "Sports Car" && data.map(t => <div key={t._id}>
                             <div className="card w-full lg:w-96 h-96 bg-base-100 shadow-xl">
                                 <figure><img src={t.photo} alt="Cars" /></figure>
                                 <div className="card-body">
@@ -59,7 +77,7 @@ const CategoryTabs = () => {
             <TabPanel>
                 <div className='grid md:grid-cols-2 gap-2 md:w-10/12 mx-auto'>
                     {
-                        toys.filter(t => t.subCategory == "Truck").map(t =>
+                        category == "Truck" && data.map(t =>
                             <div key={t._id}>
                                 <div className="card w-96 h-96 bg-base-100 shadow-xl">
                                     <figure><img src={t.photo} alt="Cars" /></figure>
@@ -80,7 +98,7 @@ const CategoryTabs = () => {
             <TabPanel>
                 <div className='grid md:grid-cols-2 gap-2 md:w-10/12 mx-auto'>
                     {
-                        toys.filter(t => t.subCategory == "Fire Truck").map(t =>
+                        category == "Fire Truck" && data.map(t =>
                             <div key={t._id}>
                                 <div className="card w-96 h-96 bg-base-100 shadow-xl">
                                     <figure><img src={t.photo} alt="Cars" /></figure>
